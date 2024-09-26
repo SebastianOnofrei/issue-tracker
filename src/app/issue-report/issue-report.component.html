@@ -1,0 +1,30 @@
+<form [formGroup]="issueForm" class="report-form">
+    <h2>
+        Report an issue
+    </h2>
+    
+    <div class="input-container">
+        <label>Title</label>
+        <input type="text" formControlName="title">
+    </div>  
+    
+    <div class="input-container">   
+        <label>Description</label>
+        <textarea formControlName="description"></textarea>
+    </div>
+        
+    <div class="input-container">
+        <label>Priority</label>
+        <input type="text" formControlName="priority">
+    </div>
+
+    <div class="input-container">
+        <label>Type</label>
+        <input type="text" formControlName="type">
+    </div>
+
+    <div class="buttons-container">
+        <button type="submit">Create</button>
+        <button>Cancel</button>
+    </div>
+</form>
