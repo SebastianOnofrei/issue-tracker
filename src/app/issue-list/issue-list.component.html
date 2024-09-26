@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+            <th>Issue Number</th>
+            <th>Type</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Priority</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let issue of issues">
+            <td>{{issue.issueNo}}</td>
+            <td>{{issue.type}}</td>
+            <td>{{issue.title}}</td>
+            <td>{{issue.description}}</td>
+            <td>{{issue.priority}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>{{issues.length}} issues</td>
+        </tr>
+    </tfoot>
+</table>
