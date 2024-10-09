@@ -10,6 +10,8 @@ import { Issue } from '../issue';
 })
 export class IssueListComponent implements OnInit{
   issues: Issue[] =[];
+  // will toggle the appearance of the report issue form. display of modal :)
+  showReportIssue = false;
 
   constructor(private issueService: IssuesService){
 
@@ -23,4 +25,11 @@ export class IssueListComponent implements OnInit{
     this.getIssues(); 
     console.table(this.issues)
   }
+
+  onCloseReport(){
+    this.showReportIssue = false;
+    this.getIssues();
+  }
+
+  
 }

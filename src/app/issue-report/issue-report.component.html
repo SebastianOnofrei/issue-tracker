@@ -1,4 +1,5 @@
-<form [formGroup]="issueForm" class="report-form">
+<ng-container>
+<form [formGroup]="issueForm" class="report-form" (ngSubmit)="addIssue()">
     <h2>
         Report an issue
     </h2>
@@ -15,16 +16,23 @@
         
     <div class="input-container">
         <label>Priority</label>
-        <input type="text" formControlName="priority">
+        <input type="radio" id="lowPrio" formControlName="priority" value="low">
+        <label for="lowPrio">Low</label>
+        <input type="radio" id="highPrio" formControlName="priority" value="high">
+        <label for="highPrio">High</label>
     </div>
 
     <div class="input-container">
         <label>Type</label>
-        <input type="text" formControlName="type">
+        <select formControlName="type">
+            <option value="Feature">Feature</option>
+            <option value="Bug" selected>Bug</option>
+            <option value="Documentation">Documentation</option>
+        </select>
     </div>
 
     <div class="buttons-container">
         <button type="submit">Create</button>
-        <button>Cancel</button>
+        <button (click)="formClose.emit()">Cancel</button>
     </div>
 </form>
